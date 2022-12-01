@@ -11,6 +11,7 @@ const Todo = ({
   todo,
   todoList,
   name,
+  BASE_URL,
 }) => {
   useEffect(() => {
     fetchData();
@@ -22,7 +23,7 @@ const Todo = ({
       todo: todo,
     };
 
-    const url = `http://localhost:5000/todo/add/${paramId}`;
+    const url = `${BASE_URL}/todo/add/${paramId}`;
     axios
       .post(url, todoItem)
       .then((response) => {
@@ -35,7 +36,7 @@ const Todo = ({
 
   const handleDelete = (value) => {
     console.log(JSON.stringify(value));
-    const url = `http://localhost:5000/todo/delete/${paramId}`;
+    const url = `${BASE_URL}/todo/delete/${paramId}`;
 
     axios
       .delete(url, { data: value })

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Register = () => {
+const Register = ({ BASE_URL }) => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +20,7 @@ const Register = () => {
       password: password,
     };
 
-    const url = "http://localhost:5000/register/";
+    const url = `${BASE_URL}/register/`;
     axios
       .post(url, userDetails)
       .then((response) => {

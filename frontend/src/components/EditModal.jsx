@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const EditModal = ({ setModal, modalId, paramId, fetchData }) => {
+const EditModal = ({ setModal, modalId, paramId, fetchData, BASE_URL }) => {
   const [todo, setTodo] = useState("");
 
   const handleEdit = () => {
@@ -11,7 +11,7 @@ const EditModal = ({ setModal, modalId, paramId, fetchData }) => {
     };
     console.log(editedTodo);
 
-    const url = `http://localhost:5000/todo/update/${paramId}`;
+    const url = `${BASE_URL}/todo/update/${paramId}`;
 
     axios
       .post(url, editedTodo)

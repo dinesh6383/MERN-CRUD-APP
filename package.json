@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
     "start": "nodemon backend/index.js",
-=======
-    "start": "node backend/index.js",
->>>>>>> 6c1bd0ee34edd8eada8a8f27cd765f43e5ec805d
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

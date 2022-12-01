@@ -16,6 +16,7 @@ function App() {
   const [modalId, setModalId] = useState("");
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const BASE_URL = "https://mern-crud-app-ar6c.onrender.com";
   const pathname = location.pathname;
   const id = pathname.slice(6, pathname.length);
 
@@ -41,13 +42,17 @@ function App() {
             modalId={modalId}
             paramId={id}
             fetchData={fetchData}
+            BASE_URL={BASE_URL}
           />
         </div>
       )}
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route
+          path="/register"
+          element={<Register BASE_URL={BASE_URL} />}
+        ></Route>
+        <Route path="/login" element={<Login BASE_URL={BASE_URL} />}></Route>
         <Route
           path="/todo/:id"
           element={
@@ -60,6 +65,7 @@ function App() {
               setTodo={setTodo}
               todoList={todoList}
               name={name}
+              BASE_URL={BASE_URL}
             />
           }
         ></Route>

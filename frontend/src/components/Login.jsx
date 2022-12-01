@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ BASE_URL }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,7 +16,7 @@ const Login = () => {
       password: password,
     };
 
-    const url = "http://localhost:5000/login";
+    const url = `${BASE_URL}/login`;
     axios
       .post(url, userDetails)
       .then((response) => {
