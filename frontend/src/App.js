@@ -18,10 +18,10 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const BASE_URL = "https://mern-crud-app-ar6c.onrender.com";
   const pathname = location.pathname;
-  const id = pathname.slice(6, pathname.length);
+  const id = pathname.slice((pathname.length - 24), pathname.length);
 
   const fetchData = () => {
-    const url = `http://localhost:5000/todo/${id}`;
+    const url = `${BASE_URL}/todo/${id}`;
     axios
       .get(url)
       .then((response) => {

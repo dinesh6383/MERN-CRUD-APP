@@ -2,7 +2,7 @@ import React from "react";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-const TodoBox = ({ details, handleDelete, setModal, setModalId, paramId }) => {
+const TodoBox = ({ details, handleDelete, setModal, setModalId }) => {
   const deleteItem = () => {
     handleDelete(details);
   };
